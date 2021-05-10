@@ -6,7 +6,9 @@ function App() {
     <div className="App">
       DEMAT BREIZH
       <br/>
-      <Button></Button>
+      <Button bgcolor="tomato" title="Mon button"></Button>
+      <Button title="Default bgcolor"></Button>
+      <Button bgcolor="skyblue" title="My button2" style={{textDecoration: 'underline', color: 'grey'}} action={()=>{alert('Le bouton est cliqué')}}></Button>
     </div>
   );
 }
