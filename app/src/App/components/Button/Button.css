@@ -1,0 +1,11 @@
+.Button {
+    background-color: #4CAF50; /* Green */
+    border: 1px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 10px 5px;
+  }
