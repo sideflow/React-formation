@@ -7,12 +7,11 @@ const MemeSVGViewer = (props) =>
     <svg className={styles.MemeSVGViewer} data-testid="MemeSVGViewer" 
       viewBox={`0 0 ${props.meme.image.w} ${props.meme.image.h}`}>
         <image x={0} y={0} href={`${IMG_BASE_DIR}${props.meme.image.url}`} />
-        <text x={props.meme.x} y={props.meme.y} 
-        fill={props.meme.color} 
-        fontSize={props.meme.fontSize}
-        fontWeight={props.meme.fontWeight}
-        textDecoration={props.meme.textDecoration}
-        fontStyle={props.meme.fontStyle} >
+        <text x={props.meme.x} y={props.meme.y}
+        style={{fill:props.meme.color,fontSize:props.meme.fontSize,fontWeight:props.meme.fontWeight}}
+        textDecoration={props.meme.underline ? 'underline' : 'none'}
+        fontStyle={props.meme.italic ? 'italic' : 'normal'}
+        >
         {props.meme.text}</text>
     </svg>;
 
