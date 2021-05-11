@@ -1,0 +1,48 @@
+{
+  "memes": [
+    {
+      "titre": "React is easy",
+      "text": "J'ai fait des boutons en React !",
+      "x": 300,
+      "y": 680,
+      "color": "cyan",
+      "fontSize": 52,
+      "imageId": 1,
+      "fontWeight": "800",
+      "underline": true,
+      "italic": true,
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 1
+    },
+    {
+      "titre": "React is not easy",
+      "text": "J'ai fait du SVG en React !",
+      "x": 300,
+      "y": 680,
+      "color": "cyan",
+      "fontSize": 52,
+      "imageId": 2,
+      "fontWeight": "800",
+      "underline": false,
+      "italic": true,
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 2
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "url": "dog.jpg",
+      "w": 1212,
+      "h": 712
+    },
+    {
+        "id": 2,
+        "url": "cat.jpg",
+        "w": 1212,
+        "h": 712
+      }
+  ]
+}
