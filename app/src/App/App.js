@@ -14,10 +14,10 @@ class App extends React.Component {
 
   componentDidMount() {
     fetch(`${REST_SERVER_ADR}/memes?_expand=image`, {headers: {"Content-Type":"application/json"}})
-    .then((resp)=>resp.json(), (error)=>{console.log(error); return [];})
-    .then(arr=> {
+    .then((resp) => resp.json(), (error) => {console.log(error); return [];})
+    .then(arr => {
       console.log(arr);
-      this.setState({memes:arr})
+      this.setState({memes: arr})
       return arr;
     })
   }
@@ -28,18 +28,17 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-    <Button title="cliquer ici !!" action={()=>{
-      this.setState({counter:this.state.counter + 1})
-    }}/>
-    <AnimatedButton title="animated " action={()=>{console.log('hello');}}/>
-    {
-      this.state.memes.map((element, index) => {
-        return <MemeSVGViewer meme={element} key={"viewer-"+index}/>
-
-      })
-    }
-    <br/>
-    {JSON.stringify(this.state)}
+      <Button title="cliquer ici !!" action={()=>{
+        this.setState({counter:this.state.counter + 1})
+      }}/>
+      <AnimatedButton title="animated " action={()=>{console.log('hello');}}/>
+      {
+        this.state.memes.map((element, index) => {
+          return <MemeSVGViewer meme={element} key={"viewer-"+index}/>
+        })
+      }
+      <br/>
+      {JSON.stringify(this.state)}
     </div>
   }
 
