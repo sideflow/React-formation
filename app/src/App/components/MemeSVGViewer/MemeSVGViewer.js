@@ -23,11 +23,11 @@ MemeSVGViewer.propTypes = {
 MemeSVGViewer.defaultProps = {
   meme: {
     titre:"React is easy",
-    text:"Le js m'a tue",
-    x:350,
+    text:"J'ai fait des boutons en React !",
+    x:300,
     y:680,
-    color:"#d67171",
-    fontSize:"74",
+    color:"cyan",
+    fontSize:"52",
     imageId:"2",
     fontWeight:"800",
     underline:true,
@@ -37,7 +37,7 @@ MemeSVGViewer.defaultProps = {
     id:24,
     image: {
         id:2,
-        url:"cat.jpg",
+        url:"dog.jpg",
         w:1212,
         h:712
       }
