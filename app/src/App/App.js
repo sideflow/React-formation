@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
+import AnimatedButton from './components/AnimatedButton/AnimatedButton';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
     <Button title="cliquer ici !!" action={()=>{
       this.setState({counter:this.state.counter + 1})
     }}/>
+    <AnimatedButton title="animated " action={()=>{console.log('hello');}}/>
     {JSON.stringify(this.state)}
     </div>
   }
