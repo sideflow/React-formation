@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
 import AnimatedButton from './components/AnimatedButton/AnimatedButton';
+import MemeSVGViewer from './components/MemeSVGViewer/MemeSVGViewer';
 
 class App extends React.Component {
 
@@ -24,6 +25,8 @@ class App extends React.Component {
       this.setState({counter:this.state.counter + 1})
     }}/>
     <AnimatedButton title="animated " action={()=>{console.log('hello');}}/>
+    <br/>
+    <MemeSVGViewer/>
     {JSON.stringify(this.state)}
     </div>
   }
