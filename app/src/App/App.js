@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Button from './components/Button/Button';
-import AnimatedButton from './components/AnimatedButton/AnimatedButton';
+import MemeThumbnail from './components/MemeThumbnail/MemeThumbnail';
 import MemeSVGViewer from './components/MemeSVGViewer/MemeSVGViewer';
+
 import store from './store/store';
 
 class App extends React.Component {
@@ -25,16 +25,12 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-      <Button title="cliquer ici !!" action={() => { 
-        this.setState({counter:this.state.counter + 1})
-      }}/>
-      <AnimatedButton title="animated " action={() => {console.log('hello');}}/>
+      <MemeThumbnail/>
       {
         this.state.memes.map((element, index) => {
           return <MemeSVGViewer meme={element} key={"viewer-"+index}/>
         })
       }
-      <br/>
       {JSON.stringify(this.state)}
     </div>
   }

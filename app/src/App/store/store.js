@@ -89,9 +89,3 @@ store.subscribe(() => {
 	console.log('Le store a subit un changement');
 	console.log(store.getState());
 });
-
-//store.dispatch({types: MEMES_ACTIONS.ADD_MEME, value:{text:'meme1'}});
-//store.dispatch({types: MEMES_ACTIONS.ADD_MEME, value:{text:'meme2'}});
-//store.dispatch({types: MEMES_ACTIONS.ADD_MEME, value:{text:'meme3'}});
-//store.dispatch({types: MEMES_ACTIONS.ADD_MEME, value:{text:'meme4'}});
-//store.dispatch({types: MEMES_ACTIONS.ADD_MEME, value:{text:'meme5'}});
