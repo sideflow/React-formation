@@ -13,10 +13,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({memes: store.getState().memes}) 
+    this.setState({memes: store.getState().memes});
     store.subscribe(() => {
       this.setState({memes: store.getState().memes})
-    })
+    });
   }
   
   componentDidUpdate() {
