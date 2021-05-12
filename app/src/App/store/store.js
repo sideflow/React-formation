@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { REST_SERVER_ADR } from '../config/config';
 
-const initialState = {
+export const initialState = {
 	memes: [],
 	images: []
 };
@@ -22,7 +22,7 @@ function memesReducer(state = initialState, action) {
 
 	switch (type) {
 		case MEMES_PRIVATE_ACTIONS.INIT: {
-			fetch(`${REST_SERVER_ADR}/memes?_expand=image`, { headers: { 'Content-Type': 'application/json' } })
+			fetch(`${REST_SERVER_ADR}/memes`, { headers: { 'Content-Type': 'application/json' } })
 				.then(
 					(resp) => resp.json(),
 					(error) => {

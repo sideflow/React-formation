@@ -1,1 +1,10 @@
-.MemeThumbnail {}
+.MemeThumbnail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.MemeThumbnail>*{
+    max-width: 33vw;
+    max-height: 33vh;
+    min-width: 20vw;
+}
