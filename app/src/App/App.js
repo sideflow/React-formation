@@ -3,7 +3,7 @@ import './App.css';
 import Button from './components/Button/Button';
 import AnimatedButton from './components/AnimatedButton/AnimatedButton';
 import MemeSVGViewer from './components/MemeSVGViewer/MemeSVGViewer';
-import {REST_SERVER_ADR} from './config/config';
+import store from './store/store';
 
 class App extends React.Component {
 
@@ -13,12 +13,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${REST_SERVER_ADR}/memes?_expand=image`, {headers: {"Content-Type":"application/json"}})
-    .then((resp) => resp.json(), (error) => {console.log(error); return [];})
-    .then(arr => {
-      console.log(arr);
-      this.setState({memes: arr})
-      return arr;
+    this.setState({memes: store.getState().memes}) 
+    store.subscribe(() => {
+      this.setState({memes: store.getState().memes})
     })
   }
   
@@ -28,10 +25,10 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-      <Button title="cliquer ici !!" action={()=>{
+      <Button title="cliquer ici !!" action={() => { 
         this.setState({counter:this.state.counter + 1})
       }}/>
-      <AnimatedButton title="animated " action={()=>{console.log('hello');}}/>
+      <AnimatedButton title="animated " action={() => {console.log('hello');}}/>
       {
         this.state.memes.map((element, index) => {
           return <MemeSVGViewer meme={element} key={"viewer-"+index}/>
