@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import MemeThumbnail from './components/MemeThumbnail/MemeThumbnail';
+import MemeEditor from './components/MemeEditor/MemeEditor';
 import MemeSVGViewer from './components/MemeSVGViewer/MemeSVGViewer';
+import MemeThumbnail from './components/MemeThumbnail/MemeThumbnail';
 
 import store, {initialState as storeInitialState} from './store/store';
 
@@ -13,9 +14,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({...store.getState()});
+    this.setState({...store.getState().srvdata});
     store.subscribe(() => {
-      this.setState({...store.getState()})
+      this.setState({...store.getState().srvdata})
     });
   }
   
@@ -25,14 +26,16 @@ class App extends React.Component {
 
   render() {
     return <div className="App">
-      <MemeThumbnail>
+    <MemeEditor />
+    <hr/>
+    <MemeThumbnail>
         {
           this.state.memes.map((element, index) => {
-            return (<>{JSON.stringify(element)}
-              <MemeSVGViewer meme={{...element, image: this.state.images.find((e) => e.id === element.imageId)}} key={"viewer-"+index}/></>);
+            return <MemeSVGViewer meme={{ ...element, image: this.state.images.find((e) => e.id === element.imageId) }} key={"viewer-" + index} />;
           })
         }
       </MemeThumbnail>
+      <br />
       {JSON.stringify(this.state)}
     </div>
   }

@@ -1,1 +1,14 @@
-.MemeEditor {}
+.MemeEditor {
+    display: flex;
+}
+.MemeEditor:first-child {
+    flex-grow: 1;
+    text-align: center;
+}
+.MemeEditor:first-child > * {
+    width: 100%;
+}
+.MemeEditor:first-child svg {
+    max-height: 70vh;
+    max-width: 70vw;
+}

@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { REST_SERVER_ADR } from '../config/config';
+import currentReducer from './currentReducer';
 
 export const initialState = {
 	memes: [],
@@ -7,9 +8,9 @@ export const initialState = {
 };
 
 export const MEMES_ACTIONS = Object.seal({
-	ADD_MEMES: 'ADD_MEMES',
+	INIT_MEMES: 'ADD_MEMES',
 	ADD_MEME: 'ADD_MEME',
-	ADD_IMAGES: 'ADD_IMAGES',
+	INIT_IMAGES: 'ADD_IMAGES',
 	ADD_IMAGE: 'ADD_IMAGE'
 });
 
@@ -32,7 +33,7 @@ function memesReducer(state = initialState, action) {
 				)
 				.then((arr) => {
 					console.log(arr);
-					store.dispatch({ type: MEMES_ACTIONS.ADD_MEMES, values: arr });
+					store.dispatch({ type: MEMES_ACTIONS.INIT_MEMES, values: arr });
 					return arr;
 				});
 
@@ -46,17 +47,17 @@ function memesReducer(state = initialState, action) {
 				)
 				.then((arr) => {
 					console.log(arr);
-					store.dispatch({ type: MEMES_ACTIONS.ADD_IMAGES, values: arr });
+					store.dispatch({ type: MEMES_ACTIONS.INIT_IMAGES, values: arr });
 					return arr;
 				});
 
 			return state;
 		}
 
-		case MEMES_ACTIONS.ADD_MEMES:
+		case MEMES_ACTIONS.INIT_MEMES:
 			return {
 				...state,
-				memes: [ ...state.memes, ...action.values ]
+				memes: [ ...action.values ]
 			};
 
 		case MEMES_ACTIONS.ADD_MEME:
@@ -65,10 +66,10 @@ function memesReducer(state = initialState, action) {
 				memes: [ ...state.memes, action.value ]
 			};
 
-		case MEMES_ACTIONS.ADD_IMAGES:
+		case MEMES_ACTIONS.INIT_IMAGES:
 			return {
 				...state,
-				images: [ ...state.images, ...action.values ]
+				images: [...action.values ]
 			};
 
 		case MEMES_ACTIONS.IMAGE:
@@ -82,7 +83,13 @@ function memesReducer(state = initialState, action) {
 	}
 }
 
-const store = createStore(memesReducer);
+const combineReducer = combineReducers({
+    srvdata: memesReducer,
+    current: currentReducer
+})
+
+
+const store = createStore(combineReducer);
 export default store;
 
 store.subscribe(() => {
