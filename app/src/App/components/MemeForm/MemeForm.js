@@ -18,7 +18,7 @@ const MemeForm = () => {
   }, []);
 
   return (
-  <div className={styles.MemeForm} data-testid="MemeForm" 
+  <form  className={styles.MemeForm} data-testid="MemeForm" 
       onReset={evt => {store.dispatch({type: CURRENT_ACTION.RESET_CURRENT})}}
       onSubmit={evt => {
         evt.preventDefault();
@@ -64,7 +64,7 @@ const MemeForm = () => {
     <input type="reset" value="reset" />
 
 
-    </div>)
+    </form>)
   };
 
 MemeForm.propTypes = {};

@@ -29,6 +29,21 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 2
+    },
+    {
+      "titre": "Test",
+      "text": "Testing is needed!",
+      "x": 0,
+      "y": "211",
+      "color": "#ab1807",
+      "fontSize": "35",
+      "imageId": 1,
+      "fontWeight": "800",
+      "undeline": true,
+      "italic": true,
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 3
     }
   ],
   "images": [
@@ -39,10 +54,10 @@
       "h": 712
     },
     {
-        "id": 2,
-        "url": "cat.jpg",
-        "w": 1212,
-        "h": 712
-      }
+      "id": 2,
+      "url": "cat.jpg",
+      "w": 1212,
+      "h": 712
+    }
   ]
 }
